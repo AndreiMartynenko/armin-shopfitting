@@ -91,34 +91,34 @@ async def get_contact_inquiries():
 
 @api_router.get("/projects", response_model=List[Project])
 async def get_projects():
-    # Return sample projects data
+    # Return real projects data
     projects = [
         {
             "id": "1",
-            "title": "Modern Retail Space",
-            "category": "Construction",
-            "description": "Complete shopfitting for a 5000 sq ft retail space",
-            "image_url": "https://images.unsplash.com/photo-1693679758394-6d56a1e5c1a0?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "title": "Girkin Offices",
+            "category": "Refurbishing",
+            "description": "Complete office refurbishment with modern fit-out and interior design",
+            "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "London, UK",
-            "year": "2024"
+            "year": "Current"
         },
         {
             "id": "2",
-            "title": "Office Renovation",
-            "category": "Refurbishing",
-            "description": "Complete office refurbishment with modern amenities",
-            "image_url": "https://images.unsplash.com/photo-1695361647461-e39e6e41a41c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-            "location": "Manchester, UK",
-            "year": "2024"
+            "title": "BBC Studios",
+            "category": "Construction",
+            "description": "Full studio construction and professional fit-out services",
+            "image_url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "London, UK",
+            "year": "Completed"
         },
         {
             "id": "3",
-            "title": "Restaurant Fit-out",
-            "category": "Construction",
-            "description": "Full restaurant construction and interior design",
-            "image_url": "https://images.unsplash.com/photo-1593370059648-c143c4067ac4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-            "location": "Birmingham, UK",
-            "year": "2023"
+            "title": "ASDA Petrol Station Shops",
+            "category": "Shopfitting",
+            "description": "Retail shopfitting for multiple ASDA petrol station convenience stores",
+            "image_url": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "Nationwide, UK",
+            "year": "Completed"
         }
     ]
     return projects

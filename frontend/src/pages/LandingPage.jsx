@@ -56,13 +56,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" data-testid="logo" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-orange-500 flex items-center justify-center">
-              <Building2 className="w-6 h-6 text-white" />
-            </div>
-            <span className="font-barlow font-bold text-xl uppercase tracking-tight text-slate-900">
-              Armin Shopfitting
-            </span>
+          <a href="#" data-testid="logo" className="flex items-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/cp0p3xuv_Construction%20%26%20Refurbishment%20Services.png" 
+              alt="Armin Shopfitting Logo" 
+              className="h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -843,13 +842,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-orange-500 flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-white" />
-              </div>
-              <span className="font-barlow font-bold text-xl uppercase tracking-tight text-white">
-                Armin Shopfitting
-              </span>
+            <div className="mb-6">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/cp0p3xuv_Construction%20%26%20Refurbishment%20Services.png" 
+                alt="Armin Shopfitting Logo" 
+                className="h-14 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-slate-400 max-w-md leading-relaxed mb-6">
               Expert property analysis, refurbishing, and construction services. 
