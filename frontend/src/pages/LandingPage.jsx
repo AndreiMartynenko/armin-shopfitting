@@ -243,12 +243,6 @@ const ProjectsSection = () => {
     fetchProjects();
   }, []);
 
-  const projectImages = {
-    "Girkin Offices": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-    "BBC Studios": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-    "ASDA Petrol Station Shops": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
-  };
-
   return (
     <section id="projects" data-testid="projects-section" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -264,7 +258,7 @@ const ProjectsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -277,17 +271,14 @@ const ProjectsSection = () => {
             >
               <div className="overflow-hidden rounded-lg mb-4">
                 <img
-                  src={projectImages[project.title] || project.image_url}
+                  src={project.image_url}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
-                  <p className="text-gray-500 text-sm">{project.location}</p>
-                </div>
-                <span className="text-sm text-gray-400">{project.year}</span>
+              <div>
+                <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
+                <p className="text-gray-500 text-sm">{project.category}</p>
               </div>
             </motion.div>
           ))}
