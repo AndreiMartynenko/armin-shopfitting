@@ -136,7 +136,7 @@ const HeroSection = () => {
           className="max-w-4xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-8">
-            We deliver <span className="font-medium">construction</span>, <span className="font-medium">refurbishment</span> and <span className="font-medium">property analysis</span> services across London.
+            We deliver <span className="font-medium">construction</span>, <span className="font-medium">refurbishment</span> and <span className="font-medium">property analysis</span> services across UK and Europe.
           </h1>
           
           <p className="text-xl text-gray-500 max-w-2xl mb-10 leading-relaxed">
@@ -359,7 +359,7 @@ const AboutSection = () => {
             
             <div className="flex flex-wrap justify-center gap-12 mt-12">
               <div className="text-center">
-                <span className="text-4xl font-light text-gray-900">250+</span>
+                <span className="text-4xl font-light text-gray-900">50+</span>
                 <p className="text-gray-500 text-sm mt-1">Projects Delivered</p>
               </div>
               <div className="text-center">
