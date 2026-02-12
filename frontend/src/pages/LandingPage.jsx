@@ -57,11 +57,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" data-testid="logo" className="flex items-center">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
-              alt="Armin Shopfitting Logo" 
-              className="h-12 w-auto"
-            />
+            <div className="bg-white px-3 py-1 rounded-sm">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
+                alt="Armin Shopfitting Logo" 
+                className="h-10 w-auto"
+              />
+            </div>
           </a>
 
           {/* Desktop Navigation */}
@@ -843,11 +845,13 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
-                alt="Armin Shopfitting Logo" 
-                className="h-14 w-auto brightness-0 invert"
-              />
+              <div className="bg-white inline-block px-3 py-1 rounded-sm">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
+                  alt="Armin Shopfitting Logo" 
+                  className="h-12 w-auto"
+                />
+              </div>
             </div>
             <p className="text-slate-400 max-w-md leading-relaxed mb-6">
               Expert property analysis, refurbishing, and construction services. 
