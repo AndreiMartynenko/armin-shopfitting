@@ -30,13 +30,13 @@ const Navbar = () => {
   return (
     <nav data-testid="navbar" className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-24 md:h-32">
+        <div className="flex items-center justify-between h-28 md:h-36">
           {/* Logo - Bigger */}
-          <a href="#" data-testid="logo" className="flex items-center py-4">
+          <a href="#" data-testid="logo" className="flex items-center py-2">
             <img 
               src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
               alt="Armin Shopfitting Logo" 
-              className="h-14 sm:h-16 md:h-20 w-auto"
+              className="h-20 sm:h-24 md:h-28 w-auto"
             />
           </a>
 
@@ -106,7 +106,7 @@ const Navbar = () => {
 // Hero Section - With Image
 const HeroSection = () => {
   return (
-    <section data-testid="hero-section" className="pt-24 md:pt-32">
+    <section data-testid="hero-section" className="pt-28 md:pt-36">
       {/* Hero Image */}
       <div className="relative h-[60vh] md:h-[70vh] w-full">
         <img
