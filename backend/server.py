@@ -1,15 +1,14 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
-
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -25,46 +24,132 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
-
 # Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
+class ContactInquiry(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+    service: str
+    message: str
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
-class StatusCheckCreate(BaseModel):
-    client_name: str
+class ContactInquiryCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+    service: str
+    message: str
 
-# Add your routes to the router instead of directly to app
+class Project(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    title: str
+    category: str
+    description: str
+    image_url: str
+    location: str
+    year: str
+
+class Testimonial(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    company: str
+    quote: str
+    rating: int = 5
+
+# Routes
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Armin Shopfitting API"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
+@api_router.post("/contact", response_model=ContactInquiry)
+async def create_contact_inquiry(input: ContactInquiryCreate):
+    inquiry_dict = input.model_dump()
+    inquiry_obj = ContactInquiry(**inquiry_dict)
     
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
+    doc = inquiry_obj.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
     
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
+    await db.contact_inquiries.insert_one(doc)
+    return inquiry_obj
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
+@api_router.get("/contact", response_model=List[ContactInquiry])
+async def get_contact_inquiries():
+    inquiries = await db.contact_inquiries.find({}, {"_id": 0}).to_list(1000)
     
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
+    for inquiry in inquiries:
+        if isinstance(inquiry.get('created_at'), str):
+            inquiry['created_at'] = datetime.fromisoformat(inquiry['created_at'])
     
-    return status_checks
+    return inquiries
+
+@api_router.get("/projects", response_model=List[Project])
+async def get_projects():
+    # Return sample projects data
+    projects = [
+        {
+            "id": "1",
+            "title": "Modern Retail Space",
+            "category": "Construction",
+            "description": "Complete shopfitting for a 5000 sq ft retail space",
+            "image_url": "https://images.unsplash.com/photo-1693679758394-6d56a1e5c1a0?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "London, UK",
+            "year": "2024"
+        },
+        {
+            "id": "2",
+            "title": "Office Renovation",
+            "category": "Refurbishing",
+            "description": "Complete office refurbishment with modern amenities",
+            "image_url": "https://images.unsplash.com/photo-1695361647461-e39e6e41a41c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "Manchester, UK",
+            "year": "2024"
+        },
+        {
+            "id": "3",
+            "title": "Restaurant Fit-out",
+            "category": "Construction",
+            "description": "Full restaurant construction and interior design",
+            "image_url": "https://images.unsplash.com/photo-1593370059648-c143c4067ac4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "Birmingham, UK",
+            "year": "2023"
+        }
+    ]
+    return projects
+
+@api_router.get("/testimonials", response_model=List[Testimonial])
+async def get_testimonials():
+    # Return sample testimonials
+    testimonials = [
+        {
+            "id": "1",
+            "name": "James Mitchell",
+            "company": "Mitchell Retail Group",
+            "quote": "Armin Shopfitting transformed our retail space beyond expectations. Their attention to detail and professionalism is unmatched.",
+            "rating": 5
+        },
+        {
+            "id": "2",
+            "name": "Sarah Williams",
+            "company": "Williams & Co Properties",
+            "quote": "From property analysis to final construction, their team delivered exceptional results on time and within budget.",
+            "rating": 5
+        },
+        {
+            "id": "3",
+            "name": "David Chen",
+            "company": "Chen Hospitality",
+            "quote": "The refurbishment of our hotel lobby was handled with incredible skill. Our guests constantly compliment the new design.",
+            "rating": 5
+        }
+    ]
+    return testimonials
 
 # Include the router in the main app
 app.include_router(api_router)
