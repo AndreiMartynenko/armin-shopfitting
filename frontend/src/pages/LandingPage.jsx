@@ -30,13 +30,13 @@ const Navbar = () => {
   return (
     <nav data-testid="navbar" className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-28">
           {/* Logo - Bigger */}
           <a href="#" data-testid="logo" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
               alt="Armin Shopfitting Logo" 
-              className="h-16 w-auto"
+              className="h-20 md:h-24 w-auto"
             />
           </a>
 
@@ -103,15 +103,36 @@ const Navbar = () => {
   );
 };
 
-// Hero Section - Clean & Simple like London Urban
+// Hero Section - With Image
 const HeroSection = () => {
   return (
-    <section data-testid="hero-section" className="min-h-screen flex items-center bg-white pt-24">
+    <section data-testid="hero-section" className="pt-28">
+      {/* Hero Image */}
+      <div className="relative h-[60vh] md:h-[70vh] w-full">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920"
+          alt="Construction site"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-white text-3xl md:text-5xl font-light text-center px-6"
+          >
+            Construction & Refurbishment Services
+          </motion.h2>
+        </div>
+      </div>
+
+      {/* Text Content */}
       <div className="max-w-6xl mx-auto px-6 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight mb-8">
