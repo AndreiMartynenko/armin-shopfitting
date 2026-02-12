@@ -58,7 +58,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#" data-testid="logo" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/cp0p3xuv_Construction%20%26%20Refurbishment%20Services.png" 
+              src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
               alt="Armin Shopfitting Logo" 
               className="h-12 w-auto"
             />
@@ -844,7 +844,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <img 
-                src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/cp0p3xuv_Construction%20%26%20Refurbishment%20Services.png" 
+                src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
                 alt="Armin Shopfitting Logo" 
                 className="h-14 w-auto brightness-0 invert"
               />
