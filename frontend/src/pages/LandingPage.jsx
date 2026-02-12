@@ -240,7 +240,7 @@ const TrustedBySection = () => {
     },
     { 
       name: "EG Group", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/EG_Group_logo.svg/1200px-EG_Group_logo.svg.png"
+      logo: null
     },
     { 
       name: "H&M", 
@@ -252,7 +252,7 @@ const TrustedBySection = () => {
     },
     { 
       name: "ASDA", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/sixty/Asda_logo.svg/1200px-Asda_logo.svg.png"
+      logo: null
     }
   ];
   
@@ -262,17 +262,16 @@ const TrustedBySection = () => {
         <p className="text-center text-gray-400 text-sm mb-10">Trusted by leading brands</p>
         <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
           {clients.map((client) => (
-            <div key={client.name} className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img 
-                src={client.logo} 
-                alt={client.name} 
-                className="h-10 md:h-12 w-auto object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <span className="hidden text-gray-500 text-lg font-medium">{client.name}</span>
+            <div key={client.name} className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+              {client.logo ? (
+                <img 
+                  src={client.logo} 
+                  alt={client.name} 
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
+              ) : (
+                <span className="text-gray-500 text-xl font-bold tracking-wide">{client.name}</span>
+              )}
             </div>
           ))}
         </div>
