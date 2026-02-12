@@ -139,7 +139,7 @@ async def get_testimonials():
         {
             "id": "1",
             "name": "EG Group Management",
-            "company": "EG Garage",
+            "company": "EG Group",
             "quote": "Armin Shopfitting delivered exceptional quality on our petrol station projects. Their attention to detail, professionalism, and ability to meet tight deadlines made them a pleasure to work with. We highly recommend their services.",
             "rating": 5
         },
