@@ -30,13 +30,13 @@ const Navbar = () => {
   return (
     <nav data-testid="navbar" className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-32 md:h-40 lg:h-44">
+        <div className="flex items-center justify-between h-36 md:h-48 lg:h-52">
           {/* Logo - Bigger */}
           <a href="#" data-testid="logo" className="flex items-center">
             <img 
               src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
               alt="Armin Shopfitting Logo" 
-              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto"
+              className="h-28 sm:h-32 md:h-40 lg:h-44 w-auto"
             />
           </a>
 
@@ -106,11 +106,11 @@ const Navbar = () => {
 // Hero Section - With Image
 const HeroSection = () => {
   return (
-    <section data-testid="hero-section" className="pt-32 md:pt-40 lg:pt-44">
+    <section data-testid="hero-section" className="pt-36 md:pt-48 lg:pt-52">
       {/* Hero Image - Clean & Calm */}
       <div className="relative h-[50vh] md:h-[60vh] w-full">
         <img
-          src="https://images.unsplash.com/photo-1759987383760-327efaf5522a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920"
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920"
           alt="Modern interior space"
           className="w-full h-full object-cover"
         />
