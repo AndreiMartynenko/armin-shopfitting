@@ -95,28 +95,37 @@ async def get_projects():
     projects = [
         {
             "id": "1",
-            "title": "Girkin Offices",
-            "category": "Refurbishing",
-            "description": "Complete office refurbishment with modern fit-out and interior design",
-            "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "title": "H&M Shops",
+            "category": "Shopfitting",
+            "description": "Complete retail shopfitting for H&M store locations",
+            "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "London, UK",
-            "year": "Current"
+            "year": "Completed"
         },
         {
             "id": "2",
-            "title": "BBC Studios",
-            "category": "Construction",
-            "description": "Full studio construction and professional fit-out services",
-            "image_url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "title": "Starbucks",
+            "category": "Shopfitting",
+            "description": "Interior fit-out and refurbishment for Starbucks coffee shops",
+            "image_url": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "London, UK",
             "year": "Completed"
         },
         {
             "id": "3",
-            "title": "ASDA Petrol Station Shops",
+            "title": "Subway",
             "category": "Shopfitting",
-            "description": "Retail shopfitting for multiple ASDA petrol station convenience stores",
-            "image_url": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "description": "Restaurant fit-out and construction for Subway franchise locations",
+            "image_url": "https://images.unsplash.com/photo-1567521464027-f127ff144326?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "UK",
+            "year": "Completed"
+        },
+        {
+            "id": "4",
+            "title": "EG Garage",
+            "category": "Construction",
+            "description": "Full construction and refurbishment services for EG Group petrol stations",
+            "image_url": "https://images.unsplash.com/photo-1565620731358-e8c038abc8d1?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "Nationwide, UK",
             "year": "Completed"
         }
@@ -125,27 +134,27 @@ async def get_projects():
 
 @api_router.get("/testimonials", response_model=List[Testimonial])
 async def get_testimonials():
-    # Return sample testimonials
+    # Return testimonials
     testimonials = [
         {
             "id": "1",
-            "name": "James Mitchell",
-            "company": "Mitchell Retail Group",
-            "quote": "Armin Shopfitting transformed our retail space beyond expectations. Their attention to detail and professionalism is unmatched.",
+            "name": "EG Group Management",
+            "company": "EG Garage",
+            "quote": "Armin Shopfitting delivered exceptional quality on our petrol station projects. Their attention to detail, professionalism, and ability to meet tight deadlines made them a pleasure to work with. We highly recommend their services.",
             "rating": 5
         },
         {
             "id": "2",
             "name": "Sarah Williams",
-            "company": "Williams & Co Properties",
-            "quote": "From property analysis to final construction, their team delivered exceptional results on time and within budget.",
+            "company": "Retail Development Manager",
+            "quote": "Outstanding work on our retail fit-outs. The team understood our brand requirements perfectly and delivered a space that exceeded our expectations.",
             "rating": 5
         },
         {
             "id": "3",
             "name": "David Chen",
-            "company": "Chen Hospitality",
-            "quote": "The refurbishment of our hotel lobby was handled with incredible skill. Our guests constantly compliment the new design.",
+            "company": "Property Developer",
+            "quote": "From initial consultation to final handover, Armin Shopfitting demonstrated expertise and reliability. Their project management was seamless.",
             "rating": 5
         }
     ]
