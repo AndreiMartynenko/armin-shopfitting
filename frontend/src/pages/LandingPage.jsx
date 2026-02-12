@@ -227,6 +227,26 @@ const ServicesSection = () => {
   );
 };
 
+// Trusted By Section - Client Logos
+const TrustedBySection = () => {
+  const clients = ["Starbucks", "Subway", "EG Garage", "H&M", "BBC", "ASDA"];
+  
+  return (
+    <section className="py-16 bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <p className="text-center text-gray-400 text-sm mb-8">Trusted by leading brands</p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          {clients.map((client) => (
+            <span key={client} className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors">
+              {client}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Projects Section - Clean Grid
 const ProjectsSection = () => {
   const [projects, setProjects] = useState([]);
@@ -579,6 +599,7 @@ const LandingPage = () => {
     <div data-testid="landing-page" className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
+      <TrustedBySection />
       <ServicesSection />
       <ProjectsSection />
       <AboutSection />
