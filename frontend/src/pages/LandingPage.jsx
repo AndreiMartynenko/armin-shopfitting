@@ -229,17 +229,51 @@ const ServicesSection = () => {
 
 // Trusted By Section - Client Logos
 const TrustedBySection = () => {
-  const clients = ["Starbucks", "Subway", "EG Garage", "H&M", "BBC", "ASDA"];
+  const clients = [
+    { 
+      name: "Starbucks", 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
+    },
+    { 
+      name: "Subway", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Subway_2016_logo.svg/1200px-Subway_2016_logo.svg.png"
+    },
+    { 
+      name: "EG Group", 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/EG_Group_logo.svg/1200px-EG_Group_logo.svg.png"
+    },
+    { 
+      name: "H&M", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png"
+    },
+    { 
+      name: "BBC", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/BBC_Logo_2021.svg/1200px-BBC_Logo_2021.svg.png"
+    },
+    { 
+      name: "ASDA", 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/sixty/Asda_logo.svg/1200px-Asda_logo.svg.png"
+    }
+  ];
   
   return (
     <section className="py-16 bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-center text-gray-400 text-sm mb-8">Trusted by leading brands</p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <p className="text-center text-gray-400 text-sm mb-10">Trusted by leading brands</p>
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
           {clients.map((client) => (
-            <span key={client} className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors">
-              {client}
-            </span>
+            <div key={client.name} className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img 
+                src={client.logo} 
+                alt={client.name} 
+                className="h-10 md:h-12 w-auto object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <span className="hidden text-gray-500 text-lg font-medium">{client.name}</span>
+            </div>
           ))}
         </div>
       </div>
