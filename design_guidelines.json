@@ -1,124 +1,153 @@
 {
-  "brand_identity": {
-    "name": "Armin Shopfitting",
-    "tagline": "Precision in Every Beam. Artistry in Every Space.",
-    "archetype": "The Performance Pro",
-    "emotional_tone": "Structural, Reliable, Transformative, High-Precision",
-    "target_audience": "Property Developers, Commercial Retail Owners, Real Estate Investors"
-  },
   "design_system": {
-    "theme_strategy": "Light Mode Default (Clean, Architectural) with Dark Mode Sections for Impact",
-    "colors": {
-      "primary": {
-        "name": "Structural Slate",
-        "hex": "#0F172A",
-        "tailwind": "bg-slate-900",
-        "usage": "Primary Headings, Footer, Strong CTAs"
-      },
-      "secondary": {
-        "name": "Concrete Mist",
-        "hex": "#F8FAFC",
-        "tailwind": "bg-slate-50",
-        "usage": "Section Backgrounds, Cards"
-      },
-      "accent": {
-        "name": "Safety Orange",
-        "hex": "#F97316",
-        "tailwind": "bg-orange-500",
-        "usage": "Buttons, Highlights, Progress Bars, Icons"
-      },
-      "neutral": {
-        "name": "Steel Grey",
-        "hex": "#64748B",
-        "tailwind": "text-slate-500",
-        "usage": "Body Text, Subtitles"
-      },
-      "forbidden_colors": ["#7351B7", "#1B93A4"]
-    },
     "typography": {
-      "headings": {
-        "font_family": "Barlow Condensed, sans-serif",
-        "weights": ["700", "800"],
-        "style": "Uppercase, Tight Tracking",
-        "tailwind_classes": "font-barlow tracking-tight uppercase"
+      "font_family": {
+        "heading": "Barlow Condensed, sans-serif",
+        "body": "Manrope, sans-serif"
       },
-      "body": {
-        "font_family": "Manrope, sans-serif",
-        "weights": ["400", "500"],
-        "style": "Clean, Legible",
-        "tailwind_classes": "font-manrope leading-relaxed"
-      },
-      "google_fonts_import": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap"
+      "scale": {
+        "h1": "text-6xl md:text-7xl font-bold tracking-tighter uppercase leading-none",
+        "h2": "text-4xl md:text-5xl font-bold tracking-tight uppercase",
+        "h3": "text-2xl md:text-3xl font-semibold tracking-normal",
+        "body_large": "text-lg md:text-xl font-medium leading-relaxed",
+        "body_default": "text-base text-slate-600 leading-relaxed",
+        "caption": "text-sm font-bold tracking-widest uppercase text-slate-500"
+      }
     },
-    "spacing": {
-      "base_scale": "Generous (2x standard)",
-      "section_padding": "py-24 md:py-32",
-      "container_padding": "px-6 md:px-12",
-      "element_gap": "gap-8 md:gap-12"
+    "colors": {
+      "palette": {
+        "primary": "#0F172A",
+        "secondary": "#F97316",
+        "accent": "#3B82F6",
+        "background": "#F8FAFC",
+        "surface": "#FFFFFF",
+        "border": "#E2E8F0",
+        "muted": "#64748B"
+      },
+      "usage": {
+        "text_main": "text-slate-900",
+        "text_muted": "text-slate-600",
+        "bg_main": "bg-slate-50",
+        "bg_surface": "bg-white",
+        "border_default": "border-slate-200",
+        "primary_cta": "bg-slate-900 text-white hover:bg-slate-800",
+        "secondary_cta": "bg-orange-500 text-white hover:bg-orange-600"
+      }
     },
     "visual_enhancers": {
-      "borders": "1px solid rgba(15, 23, 42, 0.1)",
-      "radius": "rounded-none (Sharp, Industrial) or rounded-sm (Minimal)",
-      "shadows": "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] (Neo-Brutalist/Industrial Pop)",
-      "textures": "Subtle concrete grain overlay on light backgrounds"
+      "shadows": {
+        "industrial": "shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]",
+        "industrial_hover": "hover:shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-0.5 transition-all duration-200"
+      },
+      "borders": {
+        "default": "border border-slate-200",
+        "thick": "border-2 border-slate-900"
+      },
+      "radius": {
+        "default": "rounded-none",
+        "subtle": "rounded-sm"
+      }
+    },
+    "layout": {
+      "container": "max-w-7xl mx-auto px-6 md:px-12",
+      "section_spacing": "py-20 md:py-32",
+      "grid_gap": "gap-8 md:gap-12"
     }
   },
-  "layout_strategies": {
-    "hero_section": {
-      "type": "Split Asymmetry or Full Background",
-      "structure": "High-impact typography overlaying a darkened architectural image. Use 'Tetris' grid logic.",
-      "elements": [
-        "Headline: text-6xl md:text-8xl font-bold uppercase",
-        "Subheadline: text-xl text-slate-300 max-w-lg",
-        "CTA: Solid Orange Button with Arrow Icon"
-      ]
+  "components": {
+    "hero": {
+      "type": "split_layout",
+      "content": {
+        "alignment": "left",
+        "elements": [
+          "Badge: 'EST. 2024'",
+          "H1: 'PRECISION SHOPFITTING & CONSTRUCTION'",
+          "Body: 'Transforming commercial spaces with architectural precision and industrial strength.'",
+          "CTA Group: [Primary Button 'View Projects', Secondary Button 'Contact Us']"
+        ]
+      },
+      "visuals": {
+        "image_style": "Rectangular with thick border and industrial shadow",
+        "background": "Subtle grid pattern opacity-5"
+      }
     },
-    "services_section": {
-      "type": "Bento Grid",
-      "structure": "Grid of 3 cards. One large (Construction), two smaller (Analysis, Refurbishing).",
-      "card_style": "White bg, heavy border, hover:translate-x-1 hover:translate-y-1 transition-all"
+    "services": {
+      "type": "grid_3_column",
+      "card_style": "bg-white border-2 border-slate-900 p-8 industrial-shadow hover:industrial-shadow-hover",
+      "icons": "Lucide React (Ruler, Hammer, HardHat)"
     },
-    "portfolio_section": {
-      "type": "Horizontal Scroll or Masonry",
-      "structure": "Large project images with overlay text on hover.",
-      "interaction": "Parallax effect on scroll"
+    "portfolio": {
+      "type": "bento_grid",
+      "layout": "Grid with 1 large feature (Girkin) and 2 smaller side items (BBC, ASDA)",
+      "item_style": "group relative overflow-hidden border-2 border-slate-900 h-[400px]"
     },
-    "testimonials_section": {
-      "type": "Carousel",
-      "structure": "Minimalist text-focused cards. Large quote marks in Accent Color."
-    },
-    "contact_section": {
-      "type": "Split Screen",
-      "structure": "Left: Contact Info (Dark Bg). Right: Form (Light Bg).",
-      "form_style": "Input fields with bottom border only (Architectural sketch style)."
+    "contact": {
+      "type": "split_with_form",
+      "form_style": "bg-white p-8 border-2 border-slate-900 industrial-shadow",
+      "input_style": "bg-slate-50 border-b-2 border-slate-200 focus:border-slate-900 rounded-none px-4 py-3"
     }
   },
   "assets": {
     "images": {
-      "hero_bg": "https://images.unsplash.com/photo-1633931156729-eb4c55868fbe?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "services_construction": "https://images.unsplash.com/photo-1650630718105-497674381f3c?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "services_analysis": "https://images.unsplash.com/photo-1577561776790-1a20c419b1a2?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "services_refurbishing": "https://images.unsplash.com/photo-1607718809442-9b5236273ac1?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "about_us": "https://images.unsplash.com/photo-1645434926657-6b03be95310d?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "portfolio_1": "https://images.unsplash.com/photo-1693679758394-6d56a1e5c1a0?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "portfolio_2": "https://images.unsplash.com/photo-1695361647461-e39e6e41a41c?crop=entropy&cs=srgb&fm=jpg&q=85",
-      "portfolio_3": "https://images.unsplash.com/photo-1593370059648-c143c4067ac4?crop=entropy&cs=srgb&fm=jpg&q=85"
+      "hero_main": {
+        "url": "https://images.unsplash.com/photo-1659353587228-5dbbebb5d98f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwbWFuYWdlciUyMHdpdGglMjB0YWJsZXR8ZW58MHx8fHwxNzcwOTIxMDkzfDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Construction Manager with Tablet",
+        "usage": "Hero Section Right Side"
+      },
+      "portfolio_girkin": {
+        "url": "https://images.unsplash.com/photo-1755474897404-006834b70103?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2UlMjBpbnRlcmlvciUyMGdsYXNzJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc3MDkyMTA1Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Girkin Offices Interior",
+        "usage": "Portfolio Large Item"
+      },
+      "portfolio_bbc": {
+        "url": "https://images.unsplash.com/photo-1718066236074-13f8cf7ae93e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBpbnRlcmlvciUyMGdsYXNzJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc3MDkyMTA1Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "BBC Studios Corridor",
+        "usage": "Portfolio Small Item Top"
+      },
+      "portfolio_asda": {
+        "url": "https://images.unsplash.com/photo-1759153820384-12c9ddf8bd8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxzdXBlcm1hcmtldCUyMGludGVyaW9yJTIwc2hlbHZlcyUyMG1vZGVybnxlbnwwfHx8fDE3NzA5MjEwODh8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "ASDA Shopfitting",
+        "usage": "Portfolio Small Item Bottom"
+      },
+      "texture_blueprint": {
+        "url": "https://images.unsplash.com/photo-1653164488636-7407bec89281?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50JTIwcGFwZXIlMjB0ZXh0dXJlfGVufDB8fHx8MTc3MDkyMTEyNnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Architectural Model Texture",
+        "usage": "About Section Background"
+      }
     },
-    "icons": "Use 'lucide-react' for UI icons (ArrowRight, Hammer, Ruler, HardHat)."
+    "icons": {
+      "library": "lucide-react",
+      "mapping": {
+        "analysis": "Ruler",
+        "refurbishing": "Hammer",
+        "construction": "HardHat",
+        "contact": "ArrowRight"
+      }
+    }
   },
-  "component_instructions": {
-    "buttons": "Sharp edges (rounded-none). Primary: bg-orange-500 hover:bg-orange-600 text-white. Secondary: Border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white.",
-    "cards": "No shadow by default. Add 'shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]' on hover. Border-2 border-slate-900.",
-    "inputs": "bg-transparent border-b-2 border-slate-300 focus:border-orange-500 focus:outline-none px-0 py-4 rounded-none transition-colors",
-    "navbar": "Glassmorphism: bg-white/80 backdrop-blur-md border-b border-slate-200. Sticky."
+  "instructions_to_main_agent": {
+    "general": "Follow the 'Industrial Elegance' theme. Use the defined 'industrial-shadow' class for all cards and buttons. Keep the layout airy but structured.",
+    "layout_rules": [
+      "Use 'container' class for all section wrappers.",
+      "Ensure all text has high contrast (Slate 900 on Slate 50).",
+      "Do not use rounded corners larger than 'rounded-sm'. Keep it sharp.",
+      "Use the 'Barlow Condensed' font for all headings to give that tall, architectural feel."
+    ],
+    "component_specifics": {
+      "navbar": "Sticky, white background with bottom border. Logo left, Links right (uppercase, tracking-widest).",
+      "footer": "Dark theme (Slate 900 bg, White text). Large typography."
+    }
   },
-  "universal_guidelines": [
-    "DO NOT use generic centered layouts. Use asymmetry.",
-    "DO NOT use gradients for text or backgrounds. Stick to solid, bold colors.",
-    "Ensure all interactive elements have 'data-testid'.",
-    "Use 'framer-motion' for entrance animations (fade-up, stagger).",
-    "Typography must be responsive: text-4xl on mobile, text-6xl+ on desktop.",
-    "Avoid 'Inter' font. Use the specified Google Fonts.",
-    "Images must have alt text for accessibility."
-  ]
+  "universal_guidelines": {
+    "do_not": [
+      "Do not use gradients.",
+      "Do not use rounded-xl or rounded-2xl.",
+      "Do not use generic stock photos of shaking hands."
+    ],
+    "must_do": [
+      "Use the provided image URLs.",
+      "Implement smooth scroll.",
+      "Use 'data-testid' for all interactive elements."
+    ]
+  }
 }
