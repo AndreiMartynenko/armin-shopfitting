@@ -240,7 +240,7 @@ const TrustedBySection = () => {
     },
     { 
       name: "EG Group", 
-      logo: null
+      logo: "https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/2hqbyl72_image.png"
     },
     { 
       name: "H&M", 
@@ -252,7 +252,7 @@ const TrustedBySection = () => {
     },
     { 
       name: "ASDA", 
-      logo: null
+      logo: "https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/vfzds9vx_ASDA_%2811%29.png"
     }
   ];
   
@@ -263,15 +263,11 @@ const TrustedBySection = () => {
         <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
           {clients.map((client) => (
             <div key={client.name} className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-              {client.logo ? (
-                <img 
-                  src={client.logo} 
-                  alt={client.name} 
-                  className="h-10 md:h-12 w-auto object-contain"
-                />
-              ) : (
-                <span className="text-gray-500 text-xl font-bold tracking-wide">{client.name}</span>
-              )}
+              <img 
+                src={client.logo} 
+                alt={client.name} 
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </div>
           ))}
         </div>
