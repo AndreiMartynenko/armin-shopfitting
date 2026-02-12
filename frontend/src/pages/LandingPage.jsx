@@ -32,11 +32,11 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo - Bigger */}
-          <a href="#" data-testid="logo" className="flex items-center">
+          <a href="#" data-testid="logo" className="flex items-center py-4">
             <img 
               src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
               alt="Armin Shopfitting Logo" 
-              className="h-16 md:h-20 lg:h-24 w-auto"
+              className="h-14 sm:h-16 md:h-20 w-auto"
             />
           </a>
 
