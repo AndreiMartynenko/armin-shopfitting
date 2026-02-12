@@ -1,0 +1,124 @@
+{
+  "brand_identity": {
+    "name": "Armin Shopfitting",
+    "tagline": "Precision in Every Beam. Artistry in Every Space.",
+    "archetype": "The Performance Pro",
+    "emotional_tone": "Structural, Reliable, Transformative, High-Precision",
+    "target_audience": "Property Developers, Commercial Retail Owners, Real Estate Investors"
+  },
+  "design_system": {
+    "theme_strategy": "Light Mode Default (Clean, Architectural) with Dark Mode Sections for Impact",
+    "colors": {
+      "primary": {
+        "name": "Structural Slate",
+        "hex": "#0F172A",
+        "tailwind": "bg-slate-900",
+        "usage": "Primary Headings, Footer, Strong CTAs"
+      },
+      "secondary": {
+        "name": "Concrete Mist",
+        "hex": "#F8FAFC",
+        "tailwind": "bg-slate-50",
+        "usage": "Section Backgrounds, Cards"
+      },
+      "accent": {
+        "name": "Safety Orange",
+        "hex": "#F97316",
+        "tailwind": "bg-orange-500",
+        "usage": "Buttons, Highlights, Progress Bars, Icons"
+      },
+      "neutral": {
+        "name": "Steel Grey",
+        "hex": "#64748B",
+        "tailwind": "text-slate-500",
+        "usage": "Body Text, Subtitles"
+      },
+      "forbidden_colors": ["#7351B7", "#1B93A4"]
+    },
+    "typography": {
+      "headings": {
+        "font_family": "Barlow Condensed, sans-serif",
+        "weights": ["700", "800"],
+        "style": "Uppercase, Tight Tracking",
+        "tailwind_classes": "font-barlow tracking-tight uppercase"
+      },
+      "body": {
+        "font_family": "Manrope, sans-serif",
+        "weights": ["400", "500"],
+        "style": "Clean, Legible",
+        "tailwind_classes": "font-manrope leading-relaxed"
+      },
+      "google_fonts_import": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap"
+    },
+    "spacing": {
+      "base_scale": "Generous (2x standard)",
+      "section_padding": "py-24 md:py-32",
+      "container_padding": "px-6 md:px-12",
+      "element_gap": "gap-8 md:gap-12"
+    },
+    "visual_enhancers": {
+      "borders": "1px solid rgba(15, 23, 42, 0.1)",
+      "radius": "rounded-none (Sharp, Industrial) or rounded-sm (Minimal)",
+      "shadows": "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] (Neo-Brutalist/Industrial Pop)",
+      "textures": "Subtle concrete grain overlay on light backgrounds"
+    }
+  },
+  "layout_strategies": {
+    "hero_section": {
+      "type": "Split Asymmetry or Full Background",
+      "structure": "High-impact typography overlaying a darkened architectural image. Use 'Tetris' grid logic.",
+      "elements": [
+        "Headline: text-6xl md:text-8xl font-bold uppercase",
+        "Subheadline: text-xl text-slate-300 max-w-lg",
+        "CTA: Solid Orange Button with Arrow Icon"
+      ]
+    },
+    "services_section": {
+      "type": "Bento Grid",
+      "structure": "Grid of 3 cards. One large (Construction), two smaller (Analysis, Refurbishing).",
+      "card_style": "White bg, heavy border, hover:translate-x-1 hover:translate-y-1 transition-all"
+    },
+    "portfolio_section": {
+      "type": "Horizontal Scroll or Masonry",
+      "structure": "Large project images with overlay text on hover.",
+      "interaction": "Parallax effect on scroll"
+    },
+    "testimonials_section": {
+      "type": "Carousel",
+      "structure": "Minimalist text-focused cards. Large quote marks in Accent Color."
+    },
+    "contact_section": {
+      "type": "Split Screen",
+      "structure": "Left: Contact Info (Dark Bg). Right: Form (Light Bg).",
+      "form_style": "Input fields with bottom border only (Architectural sketch style)."
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1633931156729-eb4c55868fbe?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "services_construction": "https://images.unsplash.com/photo-1650630718105-497674381f3c?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "services_analysis": "https://images.unsplash.com/photo-1577561776790-1a20c419b1a2?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "services_refurbishing": "https://images.unsplash.com/photo-1607718809442-9b5236273ac1?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "about_us": "https://images.unsplash.com/photo-1645434926657-6b03be95310d?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "portfolio_1": "https://images.unsplash.com/photo-1693679758394-6d56a1e5c1a0?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "portfolio_2": "https://images.unsplash.com/photo-1695361647461-e39e6e41a41c?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "portfolio_3": "https://images.unsplash.com/photo-1593370059648-c143c4067ac4?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "Use 'lucide-react' for UI icons (ArrowRight, Hammer, Ruler, HardHat)."
+  },
+  "component_instructions": {
+    "buttons": "Sharp edges (rounded-none). Primary: bg-orange-500 hover:bg-orange-600 text-white. Secondary: Border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white.",
+    "cards": "No shadow by default. Add 'shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]' on hover. Border-2 border-slate-900.",
+    "inputs": "bg-transparent border-b-2 border-slate-300 focus:border-orange-500 focus:outline-none px-0 py-4 rounded-none transition-colors",
+    "navbar": "Glassmorphism: bg-white/80 backdrop-blur-md border-b border-slate-200. Sticky."
+  },
+  "universal_guidelines": [
+    "DO NOT use generic centered layouts. Use asymmetry.",
+    "DO NOT use gradients for text or backgrounds. Stick to solid, bold colors.",
+    "Ensure all interactive elements have 'data-testid'.",
+    "Use 'framer-motion' for entrance animations (fade-up, stagger).",
+    "Typography must be responsive: text-4xl on mobile, text-6xl+ on desktop.",
+    "Avoid 'Inter' font. Use the specified Google Fonts.",
+    "Images must have alt text for accessibility."
+  ]
+}
