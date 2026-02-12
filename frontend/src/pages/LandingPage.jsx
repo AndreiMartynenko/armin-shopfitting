@@ -714,7 +714,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-white font-medium">Address</p>
-                  <p className="text-slate-400">123 Construction Lane<br />London, UK EC1A 1BB</p>
+                  <p className="text-slate-400">Suite Am 288, 195-197 Wood Street<br />Walthamstow, London, E17 3NU</p>
                 </div>
               </div>
             </div>
