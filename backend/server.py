@@ -95,7 +95,7 @@ async def get_projects():
     projects = [
         {
             "id": "1",
-            "title": "Girkin Offices",
+            "title": "Gherkin Offices",
             "category": "Refurbishing",
             "description": "Complete office refurbishment with modern fit-out and interior design",
             "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
@@ -126,15 +126,6 @@ async def get_projects():
             "category": "Shopfitting",
             "description": "Complete retail shopfitting for H&M store locations",
             "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-            "location": "London, UK",
-            "year": "Completed"
-        },
-        {
-            "id": "5",
-            "title": "Starbucks",
-            "category": "Shopfitting",
-            "description": "Interior fit-out and refurbishment for Starbucks coffee shops",
-            "image_url": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "London, UK",
             "year": "Completed"
         }
