@@ -95,6 +95,33 @@ async def get_projects():
     projects = [
         {
             "id": "1",
+            "title": "Girkin Offices",
+            "category": "Refurbishing",
+            "description": "Complete office refurbishment with modern fit-out and interior design",
+            "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "London, UK",
+            "year": "Current"
+        },
+        {
+            "id": "2",
+            "title": "BBC Studios",
+            "category": "Construction",
+            "description": "Full studio construction and professional fit-out services",
+            "image_url": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "London, UK",
+            "year": "Completed"
+        },
+        {
+            "id": "3",
+            "title": "ASDA Petrol Stations",
+            "category": "Shopfitting",
+            "description": "Retail shopfitting for multiple ASDA petrol station convenience stores",
+            "image_url": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+            "location": "Nationwide, UK",
+            "year": "Completed"
+        },
+        {
+            "id": "4",
             "title": "H&M Shops",
             "category": "Shopfitting",
             "description": "Complete retail shopfitting for H&M store locations",
@@ -103,30 +130,12 @@ async def get_projects():
             "year": "Completed"
         },
         {
-            "id": "2",
+            "id": "5",
             "title": "Starbucks",
             "category": "Shopfitting",
             "description": "Interior fit-out and refurbishment for Starbucks coffee shops",
             "image_url": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
             "location": "London, UK",
-            "year": "Completed"
-        },
-        {
-            "id": "3",
-            "title": "Subway",
-            "category": "Shopfitting",
-            "description": "Restaurant fit-out and construction for Subway franchise locations",
-            "image_url": "https://images.unsplash.com/photo-1567521464027-f127ff144326?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-            "location": "UK",
-            "year": "Completed"
-        },
-        {
-            "id": "4",
-            "title": "EG Garage",
-            "category": "Construction",
-            "description": "Full construction and refurbishment services for EG Group petrol stations",
-            "image_url": "https://images.unsplash.com/photo-1565620731358-e8c038abc8d1?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
-            "location": "Nationwide, UK",
             "year": "Completed"
         }
     ]
