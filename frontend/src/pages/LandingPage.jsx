@@ -154,7 +154,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-2 bg-orange-500 text-white font-barlow uppercase tracking-wider text-sm mb-6">
-              Property Experts Since 2010
+              Property Experts Since 2020
             </span>
           </motion.div>
 
@@ -215,7 +215,7 @@ const HeroSection = () => {
               <p className="text-slate-400 text-sm mt-1">Projects Completed</p>
             </div>
             <div>
-              <span className="font-barlow font-bold text-4xl md:text-5xl text-orange-500">14</span>
+              <span className="font-barlow font-bold text-4xl md:text-5xl text-orange-500">5</span>
               <p className="text-slate-400 text-sm mt-1">Years Experience</p>
             </div>
             <div>
@@ -372,7 +372,7 @@ const AboutSection = () => {
               />
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-orange-500 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <span className="font-barlow font-bold text-5xl block">14</span>
+                  <span className="font-barlow font-bold text-5xl block">5</span>
                   <span className="text-sm uppercase tracking-wider">Years of Excellence</span>
                 </div>
               </div>
@@ -393,7 +393,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-slate-500 text-lg mb-6 leading-relaxed">
               Armin Shopfitting has been at the forefront of property development and construction 
-              for over 14 years. We combine traditional craftsmanship with modern innovation to 
+              since 2020. We combine traditional craftsmanship with modern innovation to 
               deliver exceptional results.
             </p>
             <p className="text-slate-500 mb-8 leading-relaxed">
@@ -853,7 +853,7 @@ const Footer = () => {
             </div>
             <p className="text-slate-400 max-w-md leading-relaxed mb-6">
               Expert property analysis, refurbishing, and construction services. 
-              Transforming spaces with precision and artistry since 2010.
+              Transforming spaces with precision and artistry since 2020.
             </p>
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} Armin Shopfitting. All rights reserved.
