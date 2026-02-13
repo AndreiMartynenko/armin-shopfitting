@@ -84,6 +84,32 @@ async def create_contact_inquiry(input: ContactInquiryCreate):
     doc['created_at'] = doc['created_at'].isoformat()
     
     await db.contact_inquiries.insert_one(doc)
+    
+    # Send email notification
+    try:
+        html_content = f"""
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> {input.name}</p>
+        <p><strong>Email:</strong> {input.email}</p>
+        <p><strong>Phone:</strong> {input.phone or 'Not provided'}</p>
+        <p><strong>Service:</strong> {input.service}</p>
+        <p><strong>Message:</strong></p>
+        <p>{input.message}</p>
+        """
+        
+        params = {
+            "from": SENDER_EMAIL,
+            "to": [NOTIFICATION_EMAIL],
+            "subject": f"New Inquiry from {input.name} - {input.service}",
+            "html": html_content,
+            "reply_to": input.email
+        }
+        
+        await asyncio.to_thread(resend.Emails.send, params)
+        logger.info(f"Email notification sent for inquiry from {input.email}")
+    except Exception as e:
+        logger.error(f"Failed to send email notification: {str(e)}")
+    
     return inquiry_obj
 
 @api_router.get("/contact", response_model=List[ContactInquiry])
