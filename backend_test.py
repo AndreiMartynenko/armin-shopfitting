@@ -94,7 +94,7 @@ class ArminShopfittingAPITester:
         test_data = {
             "name": "Test User",
             "email": "test@example.com",
-            "phone": "+44 123 456 7890",
+            "phone": "02080586336",
             "service": "Property Analysis",
             "message": "This is a test message for the contact form."
         }
