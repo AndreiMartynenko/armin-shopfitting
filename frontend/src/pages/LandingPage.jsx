@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : null;
 
 // Navbar Component - Simple & Clean
 const Navbar = () => {
@@ -282,11 +282,13 @@ const ProjectsSection = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
+      if (!API) return;
       try {
         const response = await axios.get(`${API}/projects`);
-        setProjects(response.data);
+        setProjects(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error("Error fetching projects:", error);
+        setProjects([]);
       }
     };
     fetchProjects();
@@ -385,11 +387,13 @@ const TestimonialSection = () => {
 
   useEffect(() => {
     const fetchTestimonials = async () => {
+      if (!API) return;
       try {
         const response = await axios.get(`${API}/testimonials`);
-        setTestimonials(response.data);
+        setTestimonials(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
+        setTestimonials([]);
       }
     };
     fetchTestimonials();
