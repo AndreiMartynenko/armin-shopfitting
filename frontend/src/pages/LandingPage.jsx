@@ -616,10 +616,6 @@ const Footer = () => {
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} Armin Shopfitting Ltd. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Privacy</a>
-            <a href="#" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Terms</a>
-          </div>
         </div>
       </div>
     </footer>
