@@ -607,13 +607,13 @@ const Footer = () => {
   return (
     <footer data-testid="footer" className="py-12 bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col items-center justify-center gap-6">
           <img 
             src="https://customer-assets.emergentagent.com/job_construct-homes-1/artifacts/hbm9jntv_ArminshopfittinG.png" 
             alt="Armin Shopfitting Logo" 
             className="h-12 w-auto"
           />
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm text-center">
             © {new Date().getFullYear()} Armin Shopfitting Ltd. All rights reserved.
           </p>
         </div>
