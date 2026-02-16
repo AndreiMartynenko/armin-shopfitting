@@ -487,7 +487,7 @@ const ContactSection = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <Phone className="w-5 h-5 text-gray-400" />
-                <span className="text-gray-600">07891234567</span>
+                <span className="text-gray-600">02080586336</span>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-gray-400" />
@@ -549,7 +549,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:border-gray-400 focus:outline-none transition-colors"
-                    placeholder="02080586336"
+                    placeholder="0786543210"
                   />
                 </div>
                 <div>
